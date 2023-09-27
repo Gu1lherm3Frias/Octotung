@@ -1,0 +1,62 @@
+.app-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+}
+
+.header {
+    background-color: var(--beautiful-purple);
+    padding: 0 11.25rem;
+}
+
+.header-nav {
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links > a {
+    color: #fff;
+    font-size: 1.25rem;
+    font-family: 'Modak', cursive;
+    text-decoration: none;
+}
+
+.login-button {
+    width: 4.75rem;
+    /* margin-left: 2.5rem; */
+    background-color: #fff;
+    border-radius: 2.5rem;
+
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+.login-button > a {
+    padding: 0.438rem 1rem;
+    line-height: 1.5rem;
+    font-family: 'Noto sans', sans-serif;
+    text-decoration: none;
+}
+
+.main {
+    background-color: var(--beautiful-purple);
+}
+
+.hero > h1 {
+    color: #fff;
+    font-family: 'Lalezar', cursive;
+}
+.footer {
+    background-color: var(--not-a-black);
+}
+
+.main, .section, .footer{
+    height: 42.5rem;
+}
