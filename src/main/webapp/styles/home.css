@@ -17,13 +17,14 @@
 }
 
 .nav-links {
+    margin-right: 7.1rem;
     display: flex;
     gap: 2.5rem;
 }
 
 .nav-links > a {
     color: #fff;
-    font-size: 1.25rem;
+    font-size: 1.375rem;
     font-family: 'Modak', cursive;
     text-decoration: none;
 }
@@ -39,6 +40,7 @@
 }
 
 .login-button > a {
+    color: var(--not-a-black);
     padding: 0.438rem 1rem;
     line-height: 1.5rem;
     font-family: 'Noto sans', sans-serif;
@@ -46,17 +48,59 @@
 }
 
 .main {
+    height: 38.75rem;
     background-color: var(--beautiful-purple);
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.hero {
+    margin: 5rem;
+    padding: 2.5rem 7.5rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero > h1 {
+    margin: 1rem;
     color: #fff;
     font-family: 'Lalezar', cursive;
+    font-size: 4rem;
 }
+
+.hero > p {
+    margin-top: 1rem;
+    width: 60%;
+    color: #fff;
+    font-family: 'Lalezar', cursive;
+    font-size: 1.5rem;
+}
+
+.event-hero-button {
+    margin: 2rem 0;
+    width: 25rem;
+    padding: 1rem 1rem;
+    background-color: var(--not-a-black);
+    border-radius: 2.5rem;
+}
+
+.event-hero-button > a {
+    color: #fff;
+    font-family: 'Modak', cursive;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
 .footer {
     background-color: var(--not-a-black);
 }
 
-.main, .section, .footer{
+.section, .footer{
     height: 42.5rem;
 }

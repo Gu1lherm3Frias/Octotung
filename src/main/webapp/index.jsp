@@ -33,7 +33,7 @@
                 <h1>IMAGINE UM LUGAR...</h1>
                 <p>...Onde seus eventos favoritos estão tão próximos que já fazem parte de você. Um lugar onde comprar e divulgar eventos se torna fácil.</p>
                 <div class="event-hero-button">
-                    <a href="/event.jsp">Eventos</a>
+                    <a href="/event.jsp">Conferir Eventos</a>
                 </div>
             </div>
         </div>
