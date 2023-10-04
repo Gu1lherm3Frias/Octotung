@@ -1,5 +1,5 @@
 .app-container {
-    width: 100vw;
+    width: 98vw;
     height: 100vh;
     background-color: #fff;
 }
@@ -97,10 +97,13 @@
     text-decoration: none;
 }
 
+.section{
+    height: 42.5rem;
+}
+
 .footer {
+    height: 18.75rem;
     background-color: var(--not-a-black);
 }
 
-.section, .footer{
-    height: 42.5rem;
-}
+
