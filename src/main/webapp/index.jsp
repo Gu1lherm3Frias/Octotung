@@ -41,7 +41,9 @@
         <div class="section"></div>
         <div class="section"></div>
         <div class="footer">
-            
+            <a href="#">
+                <img src="public/assets/images/logo.svg" alt="logo">
+            </a>
         </div>
     </div>
 </body>

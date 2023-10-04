@@ -22,8 +22,10 @@
                 <input type="text">
                 <label for="">Senha:</label>
                 <input type="password">
+                <p>Esqueceu sua senha?<a href="">Crie uma nova</a></p>
                 <button type="submit">Log In</button>
             </form>
+            <p>Não possui uma conta?<a href="">Cadastre-se</a></p>
         </div>
         <div class="img-container-block">
 
