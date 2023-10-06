@@ -1,5 +1,151 @@
-.form-container {
+.login-container {
     width: 100vw;
     height: 100vh;
-    background-color: #404eedd9;
+    
+    background-color: var(--background-purple);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.form-container {
+    width: 67.50rem;
+    height: 42.75rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    
+    border-radius: 0.625rem;
+    box-shadow: 0rem 0.625rem 1.25rem 0.25rem #00000080;
+
+    overflow: hidden;  
+}
+
+.form-container-block {
+    padding: 5rem;
+    
+    width: 33.75rem;
+    height: 42.75rem;
+    
+    background-color: var(--cute-gray);
+}
+
+#arrow-left{
+    fill: var(--white-default);
+    width: 2.5rem;
+    height: 2.5rem;
+
+    margin-bottom: 1rem;
+
+    transition: fill 2s ease;
+}
+
+#arrow-left:hover {
+    fill: var(--background-purple);
+}
+
+.form-container-block > h2 {
+    color: var(--white-default);
+    
+    font-family: 'Lalezar', cursive;
+    font-size: 2.5rem;
+}
+
+.form-container-block > p {
+    margin: -1rem 0 1rem;
+    
+    color: var(--white-default);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 1.25rem;
+}
+
+.login-form {
+    margin-bottom: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form > label {
+    margin-left: 0.5rem;
+
+    color: var(--white-default);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 1.25rem;
+}
+
+.login-form > input {
+    margin-bottom: 1.25rem;
+    padding: 0.5rem 1.25rem;
+
+    height: 3.75rem;
+    
+    color: var(--white-default);
+    background-color: var(--dark-not-a-black);
+
+    font-family: 'Noto sans', sans-serif;
+    font-size: 1.25rem;
+
+    border: none;
+    border-radius: 0.625rem;
+}
+
+.login-form > #password {
+    font-family: 'Lalezar', cursive;
+    font-size: 1.25rem;
+    letter-spacing: 0.175rem;
+}
+
+.login-form > input:focus {
+    border: 0.125rem solid var(--beautiful-purple);
+    outline: none;
+}
+
+.login-form > p {
+    color: var(--white-default);
+    font-family: 'Lalezar', cursive;
+    font-size: 1.25rem;
+}
+
+.login-form > button {
+    margin-bottom: 1rem;
+
+    height: 3.75rem;
+
+    color: var(--white-default);
+    background-color: var(--beautiful-purple);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 2rem;
+
+    border: none;
+    border-radius: 0.625rem;
+
+    transition: background-color 2s ease;
+}
+
+.login-form > button:hover {
+    background-color: var(--hover-purple);
+}
+
+.alt-links {
+    margin-left: 0.5rem;
+
+    color: var(--lime-green);
+    text-decoration: none;
+
+    transition: color 2s ease;
+}
+
+.alt-links:hover {
+    color: var(--shiny-lime-green);
+}
+
+.img-container-block {
+    width: 33.75rem;
+    height: 42.75rem;
 }
