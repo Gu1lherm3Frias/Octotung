@@ -16,3 +16,22 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
+input, button {
+  cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--white-default);
+  border: 0.125rem solid var(--beautiful-purple);
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: var(--white-default);
+}

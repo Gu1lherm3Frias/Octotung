@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Modak&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>Login</title>
+    <title>Octotung - Login</title>
 </head>
 <body>
     <div class="login-container">
@@ -22,7 +22,7 @@
                 <p>É bom te ver novamente por aqui.</p>
                 <form class="login-form" action="" method="POST">
                     <label for="email">Email:</label>
-                    <input type="text" id="email" name="email">
+                    <input type="email" id="email" name="email">
                     <label for="password">Senha:</label>
                     <input type="password" id="password" name="password">
                     <p>Esqueceu sua senha?<a class="alt-links" href="recover-password.jsp">Crie uma nova</a></p>
