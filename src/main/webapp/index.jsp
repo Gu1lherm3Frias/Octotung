@@ -38,12 +38,54 @@
                 </div>
             </div>
         </div>
-        <div class="section"></div>
-        <div class="section"></div>
+        <div class="section-ticket">
+            <div class="section-text-content">    
+                <h2>OS MAIORES EVENTOS...</h2>
+                <p>Os seus maiores sonhos sendo realizados,  conhecendo seus ídolos, ou até mesmo fazendo algo junto deles.<br>O Octotung te levará a experiências jamais imaginadas. </p>
+                <div class="buy-tickets-button">
+                    <a href="event.jsp">Adquira já seu ingresso</a>
+                </div>
+            </div>
+            <img src="public/assets/images/tickets.svg" alt="">
+        </div>
+        <div class="section-search">
+            <h2>Encontre os melhores eventos</h2>
+            <p>Aqui é o lugar onde os melhores estão desde músicos, artistas, apresentadores, palestrantes entre outros.</p>
+            <p>IMAGINA ESTAR VENDO AQUELE QUE VOCÊ MAIS ADMIRA DE PERTINHO?</p>
+            <img src="public/assets/images/search-in-notebook.svg" alt="">
+        </div>
         <div class="footer">
-            <a href="#">
-                <img src="public/assets/images/logo.svg" alt="logo">
-            </a>
+            <div class="support-social-media-content">
+                <div class="social-media">
+                    <p>Nossas redes sociais:</p>
+                    <nav>
+                        <a href="">
+                            <img src="public/assets/images/github-icon.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="public/assets/images/discord-icon.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="public/assets/images/twitter-icon.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="public/assets/images/instagram-icon.svg" alt="">
+                        </a>
+                    </nav>
+                </div>
+                <div class="support-content">
+                    <p>Suporte e contato</p>
+                    <a href=""><p>support.octo@octoorg.com</p></a>
+                </div>
+            </div>
+            <div class="sub-footer">
+                <a href="#">
+                    <img src="public/assets/images/logo.svg" alt="logo">
+                </a>
+                <div class="signup-button">
+                    <a href="signup.jsp">Sign Up</a>
+                </div>
+            </div>
         </div>
     </div>
 </body>
