@@ -38,6 +38,8 @@
 
     display: flex;
     flex-flow: row-reverse;
+
+    cursor: pointer;
 }
 
 .login-button > a {
@@ -84,27 +86,180 @@
 }
 
 .event-hero-button {
-    margin: 2rem 0;
+    margin: 3rem 0;
+    padding: 1.5rem 1rem;
+
     width: 25rem;
-    padding: 1rem 1rem;
+    
     background-color: var(--not-a-black);
+    
+    text-align: center;
+
     border-radius: 2.5rem;
+
+    cursor: pointer;
 }
 
 .event-hero-button > a {
     color: #fff;
-    font-family: 'Modak', cursive;
+    
+    font-family: 'Lalezar', cursive;
     font-size: 2rem;
+    
+    text-decoration: none;
+    line-height: 1rem;
+}
+
+.section-ticket, .section-search{
+    padding: 6.25rem 11.25rem;
+
+    /* height: 38rem; */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-search {
+    flex-direction: row-reverse;
+}
+
+.section-text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-text-content > h2{
+    font-family: 'Lalezar', cursive;
+    font-size: 3rem;
+}
+
+.section-text-content > p {
+    width: 36.25rem;
+
+    font-family: 'Lalezar', cursive;
+    font-size: 1.5rem;
+}
+
+.section-ticket > .section-text-content > p {
+    margin-bottom: 4.5rem;
+}
+
+.buy-tickets-button {
+    padding: 1.5rem 1rem;
+
+    width: 25rem;
+    
+    background-color: var(--not-a-black);
+
+    text-align: center;
+
+    border-radius: 2.5rem;
+
+    cursor: pointer;
+}
+
+.buy-tickets-button > a {
+    color: #fff;
+
+    font-family: 'Lalezar', cursive;
+    font-size: 2rem;
+
+    text-decoration: none;
+    line-height: 1rem;
+}
+
+.section-ticket > img, .section-search > img {
+    width: 24.25rem;
+    height: 24.25rem;
+} 
+
+.section-ticket > img {
+    margin-bottom: 3rem;
+}
+
+.line-divider {
+    margin: 0 11.25rem;
+
+    height: 2px;
+
+    background-color: var(--beautiful-purple);
+}
+.footer {
+    padding: 2.5rem 11.25rem;
+
+    height: 18.75rem;
+
+    background-color: var(--not-a-black);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.support-social-media {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-media > p {
+    color: var(--white-default);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 1.5rem;
+}
+
+.social-media > nav {
+    margin-top: 1rem;
+
+    display: flex;
+    gap: 1rem;
+}
+
+.support-content > p {
+    color: var(--white-default);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 1.5rem;
+
+    text-align: end;
+}
+
+.support-content > a {
+    color: var(--white-default);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 1.5rem;
     text-decoration: none;
 }
 
-.section{
-    height: 42.5rem;
+.sub-footer {
+    display: flex;
+    justify-content: space-between;
 }
 
-.footer {
-    height: 18.75rem;
-    background-color: var(--not-a-black);
+.signup-button {
+    width: 6.75rem;
+
+    background-color: #fff;
+    
+    display: flex;
+    justify-content: center;
+    
+    border-radius: 2.5rem;
+    
+    cursor: pointer;
+
+    text-align: center;
 }
 
-
+.signup-button > a {
+    padding: 0.438rem 1rem;
+    
+    color: var(--not-a-black);
+    
+    font-family: 'Noto sans', sans-serif;
+    
+    text-decoration: none;
+    line-height: 1.5rem;
+}

@@ -48,14 +48,17 @@
             </div>
             <img src="public/assets/images/tickets.svg" alt="">
         </div>
+        <div class="line-divider"></div>
         <div class="section-search">
-            <h2>Encontre os melhores eventos</h2>
-            <p>Aqui é o lugar onde os melhores estão desde músicos, artistas, apresentadores, palestrantes entre outros.</p>
-            <p>IMAGINA ESTAR VENDO AQUELE QUE VOCÊ MAIS ADMIRA DE PERTINHO?</p>
+            <div class="section-text-content">
+                <h2>Encontre os melhores eventos</h2>
+                <p>Aqui é o lugar onde os melhores estão desde músicos, artistas, apresentadores, palestrantes entre outros.</p>
+                <p>IMAGINA ESTAR VENDO AQUELE QUE VOCÊ MAIS ADMIRA DE PERTINHO?</p>
+            </div>
             <img src="public/assets/images/search-in-notebook.svg" alt="">
         </div>
         <div class="footer">
-            <div class="support-social-media-content">
+            <div class="support-social-media">
                 <div class="social-media">
                     <p>Nossas redes sociais:</p>
                     <nav>
