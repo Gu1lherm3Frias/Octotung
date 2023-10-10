@@ -1,0 +1,133 @@
+.recover-pswd-container {
+    width: 100vw;
+    height: 100vh;
+    
+    background-color: var(--background-purple);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.form-container {
+    background-color: var(--cute-gray);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    
+    border-radius: 0.625rem;
+    box-shadow: 0rem 0.625rem 1.25rem 0.25rem #00000080;
+
+    overflow: hidden;  
+}
+
+.form-container-block {
+    padding: 5rem;    
+}
+
+#arrow-left{
+    fill: var(--white-default);
+    width: 2.5rem;
+    height: 2.5rem;
+
+    margin-bottom: 1rem;
+
+    transition: fill 1s ease;
+}
+
+#arrow-left:hover {
+    fill: var(--background-purple);
+}
+
+.form-container-block > h2 {
+    color: var(--white-default);
+    
+    font-family: 'Lalezar', cursive;
+    font-size: 2.5rem;
+}
+
+.form-container-block > p {
+    margin: -1rem 0 1rem;
+    width: 25rem;
+    
+    color: var(--white-default);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 1.25rem;
+}
+
+.recover-pswd-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.recover-pswd-form > label {
+    margin-left: 0.5rem;
+
+    color: var(--white-default);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 1.25rem;
+}
+
+.recover-pswd-form > input {
+    margin-bottom: 1.25rem;
+    padding: 0.5rem 1.25rem;
+
+    height: 3.75rem;
+    
+    color: var(--white-default);
+    background-color: var(--dark-not-a-black);
+
+    font-family: 'Noto sans', sans-serif;
+    font-size: 1.25rem;
+
+    border: none;
+    border-radius: 0.625rem;
+}
+
+.recover-pswd-form > input:focus {
+    border: 0.125rem solid var(--beautiful-purple);
+    outline: none;
+}
+
+.recover-pswd-form > p {
+    color: var(--white-default);
+    font-family: 'Lalezar', cursive;
+    font-size: 1.25rem;
+}
+
+.recover-pswd-form > button {
+    margin-bottom: 1rem;
+
+    height: 3.75rem;
+
+    color: var(--white-default);
+    background-color: var(--beautiful-purple);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 2rem;
+
+    border: none;
+    border-radius: 0.625rem;
+
+    transition: background-color 1s ease;
+}
+
+.recover-pswd-form > button:hover {
+    background-color: var(--hover-purple);
+}
+
+.alt-links {
+    margin-left: 0.5rem;
+
+    color: var(--lime-green);
+    text-decoration: none;
+
+    transition: color 1s ease;
+}
+
+.alt-links:hover {
+    color: var(--shiny-lime-green);
+}

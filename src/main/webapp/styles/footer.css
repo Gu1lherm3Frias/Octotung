@@ -1,0 +1,99 @@
+.footer {
+    padding: 2.5rem 11.25rem;
+
+    height: 18.75rem;
+
+    background-color: var(--not-a-black);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.support-social-media {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-media > p {
+    color: var(--white-default);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 1.5rem;
+}
+
+.social-media > nav {
+    margin-top: 0.5rem;
+
+    display: flex;
+    gap: 1rem;
+}
+
+.social-media > nav > a {
+    color: var(--white-default);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 1.5rem;
+    
+    text-decoration: none;
+
+    transition: color 1s ease;
+}
+
+.social-media > nav > a:hover {
+    color: var(--hover-purple);
+}
+
+.support-content > p {
+    color: var(--white-default);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 1.5rem;
+
+    text-align: end;
+}
+
+.support-content > a {
+    color: var(--white-default);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.sub-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-button {
+    width: 6.75rem;
+
+    background-color: var(--beautiful-purple);
+    
+    display: flex;
+    justify-content: center;
+    
+    border-radius: 2.5rem;
+    
+    cursor: pointer;
+
+    text-align: center;
+
+    transition: background-color 1s ease;
+}
+
+.signup-button > a {
+    padding: 0.438rem 1rem;
+    
+    color: var(--white-default);
+    
+    font-family: 'Noto sans', sans-serif;
+    
+    text-decoration: none;
+    line-height: 1.5rem;
+}
+
+.signup-button:hover {
+    background-color: var(--hover-purple);
+}

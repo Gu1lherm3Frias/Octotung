@@ -9,26 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Modak&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Octotung - Welcome!</title>
 </head>
 <body>
     <div class="app-container">
-        <div class="header">
-            <header class="header-nav">
-                <a href="#">
-                    <img src="public/assets/images/logo.svg" alt="logo">
-                </a>
-                <nav class="nav-links">
-                    <a href="events.jsp">Eventos</a>
-                    <a href="make-event.jsp">Criar Evento</a>
-                    <a href="about-us.jsp">Sobre nós</a>
-                </nav>
-                <div class="login-button">
-                    <a href="login.jsp">Login</a>
-                </div>
-            </header>
-        </div>
+        <%@ include file="header.jsp" %>
         <div class="main">
             <div class="hero">
                 <h1>IMAGINE UM LUGAR...</h1>
@@ -57,39 +42,7 @@
             </div>
             <img src="public/assets/images/search-in-notebook.svg" alt="">
         </div>
-        <div class="footer">
-            <div class="support-social-media">
-                <div class="social-media">
-                    <p>Nossas redes sociais:</p>
-                    <nav>
-                        <a href="">
-                            <img src="public/assets/images/github-icon.svg" alt="">
-                        </a>
-                        <a href="">
-                            <img src="public/assets/images/discord-icon.svg" alt="">
-                        </a>
-                        <a href="">
-                            <img src="public/assets/images/twitter-icon.svg" alt="">
-                        </a>
-                        <a href="">
-                            <img src="public/assets/images/instagram-icon.svg" alt="">
-                        </a>
-                    </nav>
-                </div>
-                <div class="support-content">
-                    <p>Suporte e contato</p>
-                    <a href=""><p>support.octo@octoorg.com</p></a>
-                </div>
-            </div>
-            <div class="sub-footer">
-                <a href="#">
-                    <img src="public/assets/images/logo.svg" alt="logo">
-                </a>
-                <div class="signup-button">
-                    <a href="signup.jsp">Sign Up</a>
-                </div>
-            </div>
-        </div>
+        <%@ include file="footer.jsp" %>
     </div>
 </body>
 </html>
