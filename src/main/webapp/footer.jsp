@@ -14,7 +14,7 @@
             <div class="social-media">
                 <p>Nossas redes sociais:</p>
                 <nav>
-                    <a href="">Github</a>
+                    <a href="https://github.com/gu1lherm3frias/octotung">Github</a>
                     <a href="">Discord</a>
                     <a href="">Twitter</a>
                     <a href="">Instagram</a>
