@@ -1,8 +1,5 @@
 .signup-container {
-    padding: 5rem;
-
-    width: 100vw;
-    height: 100%;
+    padding: 5rem 0;
     
     background-color: var(--background-purple);
     
