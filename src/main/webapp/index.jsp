@@ -33,7 +33,6 @@
             </div>
             <img src="public/assets/images/tickets.svg" alt="">
         </div>
-        <div class="line-divider"></div>
         <div class="section-search">
             <div class="section-text-content">
                 <h2>Encontre os melhores eventos</h2>
