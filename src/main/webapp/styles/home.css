@@ -132,12 +132,3 @@
 .section-ticket > img {
     margin-bottom: 3rem;
 }
-
-.line-divider {
-    margin: 0 11.25rem;
-
-    height: 2px;
-
-    background-color: var(--beautiful-purple);
-}
-
