@@ -96,7 +96,7 @@
             })
 
             input.addEventListener('keydown', e => {
-                switch(e.key) {
+                switch(e.keyCode) {
                     case KEYBOARDS.backspace:
                         handleBackspace(e)
                         break
