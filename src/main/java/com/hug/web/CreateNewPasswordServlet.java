@@ -9,37 +9,30 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-    
-@WebServlet(name= "signUpServlet", value="/signUpServlet")
-public class SignUpServlet extends HttpServlet {
+
+
+@WebServlet(name = "createNewPassword", value = "/createNewPassword")
+public class CreateNewPasswordServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String userName = req.getParameter("username"); 
-        String email = req.getParameter("email");
-        String password = req.getParameter("password");
-        String confirmPassword = req.getParameter("confirm-password");
-        
+        String newPassword = req.getParameter("new-password");
+        String confirmNewPassword = req.getParameter("confirm-new-password");
+
         List<String> errors = new ArrayList<>();
 
-        if (userName == null || userName.isBlank())
-            errors.add("Name is empty");
-        if (email == null || email.isBlank())
-            errors.add("E-mail is empty");
-        if (password == null || password.isEmpty())
+        if (newPassword == null || newPassword.isEmpty())
             errors.add("Password is empty");
-        if (confirmPassword == null || confirmPassword.isEmpty())
+        if (confirmNewPassword == null || confirmNewPassword.isEmpty())
             errors.add("Confirm password is empty");
-        if (email != null && !email.contains("@"))
-            errors.add("Invalid E-mail");
-        if (password != null && (password.length() < 8 || password.length() > 20))
+        if (newPassword != null && (newPassword.length() < 8 || newPassword.length() > 20))
             errors.add("Password must have a minimum of 8 characters and max 20");
-        if (confirmPassword != null && (confirmPassword.length() < 8 || confirmPassword.length() > 20))
+        if (confirmNewPassword != null && (confirmNewPassword.length() < 8 || confirmNewPassword.length() > 20))
             errors.add("Password must have a minimum of 8 characters and max 20");
-        if (password != null) {
+        if (newPassword != null) {
             Boolean containLowerCase = false;
             Boolean containUpperCase = false;
             Boolean containDigits = false;
 
-            for (char c : password.toCharArray()) {
+            for (char c : newPassword.toCharArray()) {
                 if (Character.isLowerCase(c))
                     containLowerCase = true;
                 if (Character.isUpperCase(c))
@@ -56,12 +49,12 @@ public class SignUpServlet extends HttpServlet {
                 errors.add("Password must have digits");
         }
 
-        if (confirmPassword != null) {
+        if (confirmNewPassword != null) {
             Boolean containLowerCase = false;
             Boolean containUpperCase = false;
             Boolean containDigits = false;
 
-            for (char c : password.toCharArray()) {
+            for (char c : confirmNewPassword.toCharArray()) {
                 if (Character.isLowerCase(c))
                     containLowerCase = true;
                 if (Character.isUpperCase(c))
@@ -78,18 +71,17 @@ public class SignUpServlet extends HttpServlet {
                 errors.add("Password must have digits");
         }
 
-        if (!confirmPassword.equals(password))
+        if (!confirmNewPassword.equals(newPassword))
             errors.add("Password doesn't match");
 
         if (errors.isEmpty()) {
             res.sendRedirect("login.jsp");
         }else {
-            req.setAttribute("username", userName);
-            req.setAttribute("email", email);
-            req.setAttribute("password", password);
-            req.setAttribute("confirm-password", confirmPassword);
+            req.setAttribute("new-password", newPassword);
+            req.setAttribute("confirm-new-password", confirmNewPassword);
             req.setAttribute("errors", errors);
-            req.getRequestDispatcher("signup.jsp").forward(req, res);
+            req.getRequestDispatcher("create-new-pswd.jsp").forward(req, res);
         }
-    }
+    } 
+    
 }

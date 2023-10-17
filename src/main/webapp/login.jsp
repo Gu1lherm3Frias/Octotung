@@ -27,7 +27,7 @@
                     <input type="email" id="email" name="email" value="${email}">
                     <label for="password">Senha:</label>
                     <input type="password" id="password" name="password">
-                    <p>Esqueceu sua senha?<a class="alt-links" href="recover-password.jsp">Crie uma nova</a></p>
+                    <p>Esqueceu sua senha?<a class="alt-links" href="password-recovery.jsp">Crie uma nova</a></p>
                     <button type="submit">Log In</button>
                 </form>
                 <p>Não possui uma conta?<a class="alt-links" href="signup.jsp">Cadastre-se</a></p>
