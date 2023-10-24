@@ -22,8 +22,26 @@
                 <h2>Crie a sua conta!</h2>
                 <p>É uma honra inenarrável te conhecer.</p>
                 <form class="signup-form" action="signUpServlet" method="POST">
-                    <label for="username">Nome:</label>
-                    <input type="text" id="username" name="username" value="${username}">
+                    <div class="username-block">
+                        <div>
+                            <label for="firstname">Primeiro nome:</label>
+                            <input type="text" id="firstname" name="firstname" value="${firstname}">
+                        </div>
+                        <div>
+                            <label for="lastname">Último nome:</label>
+                            <input type="text" id="lastname" name="lastname" value="${lastname}">
+                        </div>
+                    </div>
+                    <div class="id-born-date-block">
+                        <div>
+                            <label for="user-cpf">CPF:</label>
+                            <input type="text" name="cpf"  pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})">
+                        </div>
+                        <div>
+                            <label for="born-date">Data de nascimento:</label>
+                            <input type="date" id="born-date" name="born-date">
+                        </div>
+                    </div>
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" value="${email}">
                     <label for="password">Senha:</label>

@@ -66,7 +66,16 @@
     flex-direction: column;
 }
 
-.signup-form > label {
+.username-block, .id-born-date-block {
+    display: flex;
+}
+
+.username-block > div, .id-born-date-block > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form > label, .username-block > label, .id-born-date-block > label{
     margin-left: 0.5rem;
 
     color: var(--white-default);
@@ -75,7 +84,7 @@
     font-size: 1.25rem;
 }
 
-.signup-form > input {
+.signup-form > input, .username-block > input, .id-born-date-block > input{
     margin-bottom: 1.25rem;
     padding: 0.5rem 1.25rem;
 
@@ -97,7 +106,7 @@
     letter-spacing: 0.175rem;
 }
 
-.signup-form > input:focus {
+.signup-form > input:focus , .username-block > input:focus, .id-born-date-block > input:focus{
     border: 0.125rem solid var(--beautiful-purple);
     outline: none;
 }
