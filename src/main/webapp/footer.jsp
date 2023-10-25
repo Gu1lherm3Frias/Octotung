@@ -30,7 +30,7 @@
                 <img src="public/assets/images/logo.svg" alt="logo">
             </a>
             <div class="signup-button">
-                <a href="signup.jsp">Sign Up</a>
+                <a href="register.jsp">Sign Up</a>
             </div>
         </div>
     </div>
