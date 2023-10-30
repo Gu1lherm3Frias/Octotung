@@ -21,7 +21,7 @@ import jakarta.validation.ConstraintViolation;
 public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        res.sendRedirect("register.jsp");
+        req.getRequestDispatcher("WEB-INF/register.jsp").forward(req, res);
     }
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String firstname = req.getParameter("firstname"); 
@@ -31,31 +31,17 @@ public class RegisterServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         String confirmPassword = req.getParameter("confirm-password");
-        
-        DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-        Date date;
 
-        RegisterForm form = new RegisterForm(firstname, lastname, CPF, null, email, password, confirmPassword);
-        try {
-            date = (Date) format.parse(borndate);
-            form.setBorndate(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        } finally {
-            Set<ConstraintViolation<RegisterForm>> violations = ValidatorUtil.validateObject(form);
-            if (violations.isEmpty()) {
-                res.sendRedirect("login.jsp");
-            }else {
-                req.setAttribute("firstname", firstname);
-                req.setAttribute("lastname", lastname);
-                req.setAttribute("CPF", CPF);
-                req.setAttribute("borndate", borndate);
-                req.setAttribute("email", email);
-                req.setAttribute("password", password);
-                req.setAttribute("confirm-password", confirmPassword);
-                req.setAttribute("violations", violations);
-                req.getRequestDispatcher("signup.jsp").forward(req, res);
-            }
+        RegisterForm form = new RegisterForm(firstname, lastname, CPF, borndate, email, password, confirmPassword);
+        
+        Set<ConstraintViolation<RegisterForm>> violations = ValidatorUtil.validateObject(form);
+        if (violations.isEmpty()) {
+            res.sendRedirect("login.jsp");
+        }else {
+            req.setAttribute("form", form);
+            req.setAttribute("violations", violations);
+            req.getRequestDispatcher("WEB-INF/register.jsp").forward(req, res);
         }
+        
     }
 }

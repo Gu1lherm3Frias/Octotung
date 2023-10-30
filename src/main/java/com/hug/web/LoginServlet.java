@@ -17,7 +17,8 @@ import jakarta.validation.ConstraintViolation;
 public class LoginServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        res.sendRedirect("login.jsp");
+        req.getRequestDispatcher("WEB-INF/login.jsp").forward(req, res);
+
     }
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String email = req.getParameter("email");
@@ -30,10 +31,9 @@ public class LoginServlet extends HttpServlet{
         if (violations.isEmpty()) {
             res.sendRedirect("index.jsp");
         }else {
-            req.setAttribute("email", email);
-            req.setAttribute("password", password);
+            req.setAttribute("form", form);
             req.setAttribute("violations", violations);
-            req.getRequestDispatcher("login.jsp").forward(req, res);
+            req.getRequestDispatcher("WEB-INF/login.jsp").forward(req, res);
         }
     }
 }
