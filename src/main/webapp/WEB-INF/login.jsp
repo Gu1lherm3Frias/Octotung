@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Modak&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>Octotung - Login</title>
+    <title><fmt:message key="login.title"/></title>
 </head>
 <body>
     <div class="login-container">
@@ -20,8 +20,7 @@
                 <a href="index.jsp">
                     <svg id="arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
                 </a>
-                <%@ include file="error-handlers/form-error.jsp" %>
-                <h2><fmt:message key="login.title"/></h2>
+s                <h2><fmt:message key="login.title"/></h2>
                 <p><fmt:message key="login.subtitle"/></p>
                 <form class="login-form" action="login" method="POST">
                     <label for="email"><fmt:message key="login.email.label"/></label>

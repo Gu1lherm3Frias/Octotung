@@ -1,4 +1,4 @@
-.signup-container {
+.register-container {
     padding: 5rem 0;
     
     background-color: var(--background-purple);
@@ -9,11 +9,12 @@
     
 }
 
-.form-container {    
-    display: flex;
-    justify-content: center;
-    align-items: center;  
+.form-container {  
+    padding: 5rem;
     
+    width: 45rem;
+    
+    background-color: var(--cute-gray);  
     border-radius: 0.625rem;
     box-shadow: 0rem 0.625rem 1.25rem 0.25rem #00000080;
 
@@ -21,12 +22,9 @@
 }
 
 .form-container-block {
-    padding: 5rem;
-    
-    width: 45rem;
-    height: 53.75rem;
-    
-    background-color: var(--cute-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 #arrow-left{
@@ -43,14 +41,14 @@
     fill: var(--background-purple);
 }
 
-.form-container-block > h2 {
+.form-container-header > h2 {
     color: var(--white-default);
     
     font-family: 'Lalezar', cursive;
     font-size: 2.5rem;
 }
 
-.form-container-block > p {
+.form-container-header > p {
     margin: -1rem 0 1rem;
     
     color: var(--white-default);
@@ -59,24 +57,16 @@
     font-size: 1.25rem;
 }
 
-.signup-form {
+.register-form {
     margin-bottom: 1rem;
 
     display: flex;
     flex-direction: column;
 }
 
-.username-block, .id-born-date-block {
-    display: flex;
-    gap: 1rem;
-}
 
-.username-block > div, .id-born-date-block > div {
-    display: flex;
-    flex-direction: column;
-}
 
-.signup-form label{
+.register-form label{
     margin-left: 0.5rem;
 
     color: var(--white-default);
@@ -85,10 +75,11 @@
     font-size: 1.25rem;
 }
 
-.signup-form  input{
+.register-form  input{
     margin-bottom: 1.25rem;
     padding: 0.5rem 1.25rem;
 
+    width: 100%;
     height: 3.75rem;
     
     color: var(--white-default);
@@ -101,18 +92,18 @@
     border-radius: 0.625rem;
 }
 
-.signup-form > #password, .signup-form > #confirm-password {
+.register-form > #password, .register-form > #confirm-password {
     font-family: 'Lalezar', cursive;
     font-size: 1.25rem;
     letter-spacing: 0.175rem;
 }
 
-.signup-form input:focus{
+.register-form input:focus{
     border: 0.125rem solid var(--beautiful-purple);
     outline: none;
 }
 
-.signup-form > button {
+.register-form > button {
     margin-bottom: 1rem;
 
     height: 3.75rem;
@@ -129,8 +120,17 @@
     transition: background-color 1s ease;
 }
 
-.signup-form > button:hover {
+.register-form > button:hover {
     background-color: var(--hover-purple);
+}
+
+.form-container-footer > p {
+    margin: -1rem 0 1rem;
+    
+    color: var(--white-default);
+
+    font-family: 'Lalezar', cursive;
+    font-size: 1.25rem;
 }
 
 .alt-links {
