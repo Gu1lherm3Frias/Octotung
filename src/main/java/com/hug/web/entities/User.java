@@ -1,8 +1,9 @@
-package com.hug.web.Entities;
+package com.hug.web.entities;
 
 import java.util.Date;
 
 public class User {
+    private Integer id;
     private String firstName;
     private String lastName;
     private String cpf;
@@ -10,7 +11,8 @@ public class User {
     private String email;
     private String password;
 
-    public User(String firstName, String lastName, String cpf, String borndate, String email, String password) {
+    public User(Integer id, String firstName, String lastName, String cpf, String borndate, String email, String password) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.cpf = cpf;
@@ -19,6 +21,7 @@ public class User {
         this.password = password;
     }
 
+    
     public String getFirstName() {
         return firstName;
     }
@@ -65,5 +68,15 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+
+    public void setId(Integer id) {
+        this.id = id;
     }    
 }

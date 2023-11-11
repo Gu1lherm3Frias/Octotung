@@ -9,11 +9,7 @@ import jakarta.servlet.annotation.*;
 @WebServlet(name = "helloServlet", urlPatterns = "/home")
 public class HomeServlet extends HttpServlet {
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        System.out.println("funcionou");
-    }
-
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
-        getServletContext().getRequestDispatcher("/home").forward(req, res);
+        getServletContext().getRequestDispatcher("WEB-INF/index.jsp").forward(req, res);
     }
 }

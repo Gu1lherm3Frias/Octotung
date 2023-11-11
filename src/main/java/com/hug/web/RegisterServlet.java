@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
 
+import com.hug.web.entities.UserDAO;
 import com.hug.web.forms.RegisterForm;
 import com.hug.web.validators.ValidatorUtil;
 
@@ -35,13 +36,14 @@ public class RegisterServlet extends HttpServlet {
         RegisterForm form = new RegisterForm(firstname, lastname, CPF, borndate, email, password, confirmPassword);
         
         Set<ConstraintViolation<RegisterForm>> violations = ValidatorUtil.validateObject(form);
-        if (violations.isEmpty()) {
-            res.sendRedirect("login.jsp");
-        }else {
-            req.setAttribute("form", form);
-            req.setAttribute("violations", violations);
-            req.getRequestDispatcher("WEB-INF/register.jsp").forward(req, res);
-        }
+        UserDAO.addNewUser(firstname, lastname, CPF, borndate, email, password);
+        // if (violations.isEmpty()) {
+        //     res.sendRedirect("login.jsp");
+        // }else {
+        //     req.setAttribute("form", form);
+        //     req.setAttribute("violations", violations);
+        //     req.getRequestDispatcher("WEB-INF/register.jsp").forward(req, res);
+        // }
         
     }
 }
