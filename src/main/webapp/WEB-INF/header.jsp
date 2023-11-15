@@ -11,16 +11,16 @@
 <body>
     <div class="header">
         <header class="header-nav">
-            <a href="index.jsp">
+            <a href="index">
                 <img src="public/assets/images/logo.svg" alt="logo">
             </a>
             <nav class="nav-links">
-                <a href="events.jsp">Eventos</a>
-                <a href="make-event.jsp">Criar Evento</a>
-                <a href="about-us.jsp">Sobre nós</a>
+                <a href="events">Eventos</a>
+                <a href="createEvent">Criar Evento</a>
+                <a href="aboutUs">Sobre nós</a>
             </nav>
             <div class="login-button">
-                <a href="login.jsp">Login</a>
+                <a href="login">Login</a>
             </div>
         </header>
     </div>

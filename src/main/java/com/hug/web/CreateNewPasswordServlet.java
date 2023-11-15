@@ -13,6 +13,10 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "createNewPassword", value = "/createNewPassword")
 public class CreateNewPasswordServlet extends HttpServlet{
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        req.getRequestDispatcher("WEB-INF/create-new-password.jsp").forward(req, res);
+    }
+    
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String newPassword = req.getParameter("new-password");
         String confirmNewPassword = req.getParameter("confirm-new-password");

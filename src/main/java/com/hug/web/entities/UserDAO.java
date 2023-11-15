@@ -43,26 +43,26 @@ public class UserDAO {
         }
     }
 
-    // public static List<User> showAll() {
-    //     String query = "SELECT * FROM user;";
-    //     List<User>  users = new ArrayList<>();
+    public static List<User> showAll() {
+        String query = "SELECT * FROM user;";
+        List<User>  users = new ArrayList<>();
 
-    //     try (
-    //         Connection connection = Connector.getConnection(); 
-    //         Statement statement = connection.createStatement();
-    //         ResultSet result = statement.executeQuery(query);
-    //     ) {
-    //         while (result.next()) {
-    //             users.add(
-    //                 // new User(result.getString("firstname"), result.getString("lastname"), result.getString("cpf"), result.getString("borndate"), result.getString("email"), result.getString("password"))
-    //             );
-    //         }
-    //     } catch (Exception e) {
-    //         e.printStackTrace();
-    //         return users;
-    //     }
-    //     return users;
-    // }
+        try (
+            Connection connection = Connector.getConnection(); 
+            Statement statement = connection.createStatement();
+            ResultSet result = statement.executeQuery(query);
+        ) {
+            while (result.next()) {
+                users.add(
+                    new User(result.getString("firstname"), result.getString("lastname"), result.getString("cpf"), result.getString("borndate"), result.getString("email"), result.getString("password"))
+                );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return users;
+        }
+        return users;
+    }
 
     public static User findByCPF(String cpf) {
         for (User user : users) {

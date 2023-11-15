@@ -12,6 +12,10 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "passwordRecovery", value = "/passwordRecovery")
 public class PasswordRecoveryServlet extends HttpServlet{
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
+        req.getRequestDispatcher("WEB-INF/password-recovery.jsp").forward(req, res);
+    }
+
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
         String email = req.getParameter("email");
 

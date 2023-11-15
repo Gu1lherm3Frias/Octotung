@@ -14,10 +14,10 @@
             <div class="social-media">
                 <p>Nossas redes sociais:</p>
                 <nav>
-                    <a href="https://github.com/gu1lherm3frias/octotung">Github</a>
-                    <a href="">Discord</a>
-                    <a href="">Twitter</a>
-                    <a href="">Instagram</a>
+                    <a href="https://github.com/gu1lherm3frias/octotung" target="_blank">Github</a>
+                    <a href="" target="_blank">Discord</a>
+                    <a href="" target="_blank">Twitter</a>
+                    <a href="" target="_blank">Instagram</a>
                 </nav>
             </div>
             <div class="support-content">
@@ -26,11 +26,11 @@
             </div>
         </div>
         <div class="sub-footer">
-            <a href="index.jsp">
+            <a href="index">
                 <img src="public/assets/images/logo.svg" alt="logo">
             </a>
             <div class="signup-button">
-                <a href="register.jsp">Sign Up</a>
+                <a href="register">Sign Up</a>
             </div>
         </div>
     </div>

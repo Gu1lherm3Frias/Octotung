@@ -19,7 +19,7 @@
                 <h1>IMAGINE UM LUGAR...</h1>
                 <p>...Onde seus eventos favoritos estão tão próximos que já fazem parte de você. Um lugar onde comprar e divulgar eventos se torna fácil.</p>
                 <div class="event-hero-button">
-                    <a href="event.jsp">Conferir Eventos</a>
+                    <a href="event">Conferir Eventos</a>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
                 <h2>OS MAIORES EVENTOS...</h2>
                 <p>Os seus maiores sonhos sendo realizados,  conhecendo seus ídolos, ou até mesmo fazendo algo junto deles.<br>O Octotung te levará a experiências jamais imaginadas. </p>
                 <div class="buy-tickets-button">
-                    <a href="event.jsp">Adquira já seu ingresso</a>
+                    <a href="event">Adquira já seu ingresso</a>
                 </div>
             </div>
             <img src="public/assets/images/tickets.svg" alt="">
