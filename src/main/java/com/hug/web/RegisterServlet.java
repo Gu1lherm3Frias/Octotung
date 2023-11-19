@@ -28,22 +28,22 @@ public class RegisterServlet extends HttpServlet {
         String firstname = req.getParameter("firstname"); 
         String lastname = req.getParameter("lastname");
         String CPF = req.getParameter("CPF");
-        String borndate = req.getParameter("born-date"); 
+        String phone = req.getParameter("phone"); 
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         String confirmPassword = req.getParameter("confirm-password");
 
-        RegisterForm form = new RegisterForm(firstname, lastname, CPF, borndate, email, password, confirmPassword);
+        RegisterForm form = new RegisterForm(firstname, lastname, CPF, phone, email, password, confirmPassword);
         
         Set<ConstraintViolation<RegisterForm>> violations = ValidatorUtil.validateObject(form);
-        UserDAO.addNewUser(firstname, lastname, CPF, borndate, email, password);
-        // if (violations.isEmpty()) {
-        //     res.sendRedirect("login.jsp");
-        // }else {
-        //     req.setAttribute("form", form);
-        //     req.setAttribute("violations", violations);
-        //     req.getRequestDispatcher("WEB-INF/register.jsp").forward(req, res);
-        // }
+        UserDAO.addNewUser(firstname, lastname, CPF, phone, email, password);
+        if (violations.isEmpty()) {
+            res.sendRedirect("login.jsp");
+        }else {
+            req.setAttribute("form", form);
+            req.setAttribute("violations", violations);
+            req.getRequestDispatcher("WEB-INF/register.jsp").forward(req, res);
+        }
         
     }
 }

@@ -5,9 +5,9 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="public/assets/images/favico.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/register.css">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/public/assets/images/favico.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/global.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/register.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Modak&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -42,8 +42,8 @@
                             <input type="text" name="cpf"  pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})">
                         </div>
                         <div class="input-box">
-                            <label for="born-date"><fmt:message key="register.form.borndate"/></label>
-                            <input type="date" id="born-date" name="born-date">
+                            <label for="phone"><fmt:message key="register.form.phone"/></label>
+                            <input type="tel" id="phone" name="phone">
                         </div>
                     </div>
 

@@ -20,7 +20,8 @@ public class RegisterForm {
     @NotBlank
     private String CPF;
     @NotNull
-    private String borndate;
+    @NotBlank
+    private String phone;
     @NotNull
     @NotBlank
     @Email
@@ -35,11 +36,11 @@ public class RegisterForm {
     private String confirmPassword;
 
     
-    public RegisterForm(  String firstname, String lastname, String cpf, String borndate, String email, String password, String confirmPassword) {
+    public RegisterForm(String firstname, String lastname, String cpf, String phone, String email, String password, String confirmPassword) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.CPF = cpf;
-        this.borndate = borndate;
+        this.phone = phone;
         this.email = email;
         this.password = password;
         this.confirmPassword = confirmPassword;
@@ -62,11 +63,11 @@ public class RegisterForm {
     public void setCPF(String cpf) {
         CPF = cpf;
     }
-    public String getBorndate() {
-        return borndate;
+    public String getPhone() {
+        return phone;
     }
-    public void setBorndate(String borndate) {
-        this.borndate = borndate;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
     public String getEmail() {
         return email;

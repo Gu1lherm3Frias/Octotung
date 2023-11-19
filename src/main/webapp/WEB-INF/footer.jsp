@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/global.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Modak&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
         </div>
         <div class="sub-footer">
             <a href="index">
-                <img src="public/assets/images/logo.svg" alt="logo">
+                <img src="${pageContext.request.contextPath}/resources/public/images/logo.svg" alt="logo">
             </a>
             <div class="signup-button">
                 <a href="register">Sign Up</a>
