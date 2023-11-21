@@ -5,15 +5,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 
 import com.hug.web.database.Connector;
+import at.favre.lib.crypto.bcrypt.BCrypt;
+import at.favre.lib.crypto.bcrypt.BCrypt.Result;
+
 
 public class UserDAO {
 
-    public static User addNewUser(String firstName, String lastName, String cpf, String phone, String email, String password) {
+    public static User addNewUser(String firstName, String lastName, String cpf, Date bornDate, String phone, String email, String password, Boolean isOrganizer) {
         User user = null;
-        String query = "INSERT INTO User (firstname, lastname, cpf, phone, email, password) VALUES (?, ?, ?, ?, ?, ?);";
+        String hashPassword = BCrypt.withDefaults().hashToString(12, password.toCharArray());
+
+        String query = "INSERT INTO User (FirstName, LastName, CPF, BornDate, Phone, Email, Password, IsOrganizer) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
 
         try (
             Connection connection = Connector.getConnection(); 
@@ -22,15 +28,17 @@ public class UserDAO {
             statement.setString(1, firstName);
             statement.setString(2, lastName);
             statement.setString(3, cpf);
-            statement.setString(4, phone);
-            statement.setString(5, email);
-            statement.setString(6, password);
+            statement.setDate(4, bornDate);
+            statement.setString(5, phone);
+            statement.setString(6, email);
+            statement.setString(7, hashPassword);
+            statement.setBoolean(8, isOrganizer);
             statement.executeUpdate();
 
             ResultSet result = statement.getGeneratedKeys();
 
             if (result.next()) {
-                user = new User(result.getInt(1), firstName, lastName, cpf, phone, email, password);
+                user = new User(result.getInt(1), firstName, lastName, cpf, bornDate, phone, email, hashPassword, isOrganizer);
             }
 
             result.close();
@@ -42,60 +50,132 @@ public class UserDAO {
         }
     }
 
-    // public static List<User> showAll() {
-    //     String query = "SELECT * FROM user;";
-    //     List<User>  users = new ArrayList<>();
+    public static List<User> showAll() {
+        String query = "SELECT * FROM user;";
+        List<User>  users = new ArrayList<>();
 
-    //     try (
-    //         Connection connection = Connector.getConnection(); 
-    //         Statement statement = connection.createStatement();
-    //         ResultSet result = statement.executeQuery(query);
-    //     ) {
-    //         while (result.next()) {
-    //             users.add(
-    //                 new User(result.getString("firstname"), result.getString("lastname"), result.getString("cpf"), result.getDate("borndate"), result.getString("email"), result.getString("password"))
-    //             );
-    //         }
-    //     } catch (Exception e) {
-    //         e.printStackTrace();
-    //         return users;
-    //     }
-    //     return users;
-    // }
+        try (
+            Connection connection = Connector.getConnection(); 
+            Statement statement = connection.createStatement();
+            ResultSet result = statement.executeQuery(query);
+        ) {
+            while (result.next()) {
+                users.add(
+                    new User(result.getInt("Id"),
+                    result.getString("FirstName"), 
+                    result.getString("LastName"), 
+                    result.getString("CPF"), 
+                    result.getDate("BornDate"), 
+                    result.getString("Phone"),
+                    result.getString("Email"), 
+                    result.getString("Password"), 
+                    result.getBoolean("IsOrganizer"))
+                );
+            }
+            result.close();
 
-    // public static User findByCPF(String cpf) {
-    //     for (User user : users) {
-    //         if (user.getCpf().equals(cpf)) {
-    //             return user;
-    //         }
-    //     }
-    //     return null;
-    // }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return users;
+        }
+        return users;
+    }
 
-    // public static User findByEmail(String email) {
-    //     for (User user : users) {
-    //         if (user.getEmail().equals(email)) {
-    //             return user;
-    //         }
-    //     }
-    //     return null;
-    // }
+    public static User findByCPF(String cpf) {
+        String query = "SELECT * FROM User WHERE CPF = ?;";
 
-    // public static Boolean doLogin(String email, String password) {
-    //     for (User user : users) {
-    //         if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
-    //             return true;
-    //         }
-    //     }
-    //     return false;
-    // }
+        try (
+            Connection connection = Connector.getConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
+        ) {
+            statement.setString(1, cpf);
+            ResultSet result = statement.executeQuery();
 
-    // public static Boolean emailAlreadyExists(String email) {
-    //     for (User user : users) {
-    //         if (user.getEmail().equals(email)) {
-    //             return true;
-    //         }
-    //     }
-    //     return false;
-    // }
+            while (result.next()) {
+                return new User(result.getInt("Id"),
+                    result.getString("FirstName"), 
+                    result.getString("LastName"), 
+                    result.getString("CPF"), 
+                    result.getDate("BornDate"), 
+                    result.getString("Phone"),
+                    result.getString("Email"), 
+                    result.getString("Password"), 
+                    result.getBoolean("IsOrganizer")
+                );
+            }
+
+            result.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        return null;
+
+    }
+
+    public static Integer getUserId(String email) {
+        String query = "SELECT Id FROM User WHERE Email = ?;";
+        try (
+            Connection connection = Connector.getConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
+        ) {
+            statement.setString(1, email);
+            ResultSet result = statement.executeQuery();
+            
+            if (result.next()) {
+                return result.getInt("Id");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static User findByEmail(String email) {
+        String query = "SELECT * FROM User WHERE Email = ?;";
+
+        try (
+            Connection connection = Connector.getConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
+        ) {
+            statement.setString(1, email);
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                return new User(result.getInt("Id"),
+                    result.getString("FirstName"), 
+                    result.getString("LastName"), 
+                    result.getString("CPF"), 
+                    result.getDate("BornDate"), 
+                    result.getString("Phone"),
+                    result.getString("Email"), 
+                    result.getString("Password"), 
+                    result.getBoolean("IsOrganizer")
+                );
+            }
+
+            result.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        return null;
+    }
+
+    public static Boolean doLogin(String email, String password) {
+        User user = findByEmail(email);
+        if (user != null) {
+            Result result = BCrypt.verifyer().verify(password.toCharArray(), user.getPassword());
+            return result.verified;
+        }
+        return false;
+    }
+
+    public static Boolean emailAlreadyExists(String email) {
+        return findByEmail(email) != null;
+    }
+
+    public static Boolean CPFAlreadyExists(String cpf) {
+        return findByCPF(cpf) != null;
+    }
 }

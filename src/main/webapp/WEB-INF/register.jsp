@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/public/assets/images/favico.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/public/images/favico.svg" type="image/svg+xml">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/global.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/register.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,28 +28,31 @@
                     <div class="column">
                         <div class="input-box">
                             <label for="firstname"><fmt:message key="register.form.firstname"/></label>
-                            <input type="text" id="firstname" name="firstname" value="${firstname}">
+                            <input type="text" id="firstname" name="firstname" value="${form.firstName}">
                         </div>
                         <div class="input-box">
                             <label for="lastname"><fmt:message key="register.form.lastname"/></label>
-                            <input type="text" id="lastname" name="lastname" value="${lastname}">
+                            <input type="text" id="lastname" name="lastname" value="${form.lastName}">
                         </div>
                     </div>
                     
                     <div class="column">
                         <div class="input-box">
-                            <label for="cpf">CPF:</label>
+                            <label for="cpf"><fmt:message key="register.form.CPF"/></label>
                             <input type="text" name="cpf"  pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})">
                         </div>
                         <div class="input-box">
-                            <label for="phone"><fmt:message key="register.form.phone"/></label>
-                            <input type="tel" id="phone" name="phone">
+                            <label for="born-date"><fmt:message key="register.form.borndate"/></label>
+                            <input type="date" id="born-date" name="born-date">
                         </div>
                     </div>
-
+                    <div class="input-box">
+                        <label for="phone"><fmt:message key="register.form.phone"/></label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
                     <div class="input-box">
                         <label for="email"><fmt:message key="register.form.email"/></label>
-                        <input type="email" id="email" name="email" value="${email}">
+                        <input type="email" id="email" name="email" value="${form.email}">
                     </div>
                     <div class="input-box">
                         <label for="password"><fmt:message key="register.form.password"/></label>
@@ -58,6 +61,13 @@
                     <div class="input-box">
                         <label for="confirm-password"><fmt:message key="register.form.password-confirm"/></label>
                         <input type="password" id="confirm-password" name="confirm-password">
+                    </div>
+                    <div class="select-box">
+                        <label for="user-type"><fmt:message key="register.form.user-type"/></label>
+                        <select name="user-type" id="user-type">
+                            <option value="false">User</option>
+                            <option value="true">Organizer</option>
+                        </select>
                     </div>
                     <button type="submit"><fmt:message key="register.form.button"/></button>
                 </form>
