@@ -1,11 +1,7 @@
 package com.hug.web;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.sql.Date;
 import java.util.Set;
 
@@ -38,7 +34,7 @@ public class RegisterServlet extends HttpServlet {
         Boolean isOrganizer = Boolean.parseBoolean(req.getParameter("user-type"));
 
         Boolean errorCheck = false;
-        
+
         try {
             LocalDate formatedDate = LocalDate.parse(bornDate);
             Date castDate = Date.valueOf(formatedDate);

@@ -11,7 +11,6 @@ import com.hug.web.entities.EventDAO;
 import com.hug.web.entities.User;
 import com.hug.web.entities.UserDAO;
 import com.hug.web.forms.CreateEventForm;
-import com.hug.web.forms.RegisterForm;
 import com.hug.web.validators.ValidatorUtil;
 
 import jakarta.servlet.ServletException;
