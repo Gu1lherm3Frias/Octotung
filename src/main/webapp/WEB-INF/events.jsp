@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +15,32 @@
 </head>
 <body>
     <%@ include file="header.jsp" %>
+    <%@ page import="com.hug.web.entities.*" %>
+    <main>
+        <div class="events-title">
+            <h1>Aqui estão os melhores eventos</h1>
+        </div>
+        <c:forEach var="currentEvent" items="${eventsList}">
+            <div class="event-container">
+                <div class="container-header">
+                    <p>${currentEvent.name}</p>
+                    <p>Evento ${currentEvent.type}</p>
+                </div>
+                <div class="container-main">
+                    <div class="content-side">
+                        <p>${currentEvent.description}</p>
+                        <p>${currentEvent.location}</p>
+                    </div>
+                    <div class="date-side">
+                        <p>${currentEvent.eventDate}</p>
+                        <p>${currentEvent.eventTime}</p>
+                    </div>
+                </div>
+                <p>Organizador: ${UserDAO.getNameById(EventDAO.getOrganizerId(currentEvent.id))}</p>
+                <button type="submit">Buy Ticket</button>
+            </div>
+        </c:forEach>
+    </main>
     <%@ include file="footer.jsp" %>
 </body>
 </html>

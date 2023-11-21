@@ -30,7 +30,7 @@
                     <p><fmt:message key="login.forgot-password.p"/><a class="alt-links" href="passwordRecovery"><fmt:message key="login.forgot-password.a"/></a></p>
                     <button type="submit"><fmt:message key="login.submit.button"/></button>
                 </form>
-                <p><fmt:message key="login.new-account.p"/><a class="alt-links" href="register"><fmt:message key="login.new-account.a"/></a></p>
+                <p><fmt:message key="login.new-account.p"/><a class="alt-links margin-sugar" href="register"><fmt:message key="login.new-account.a"/></a></p>
             </div>
         </div>
     </div>

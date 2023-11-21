@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet{
             if (UserDAO.doLogin(email, password)) {
                 HttpSession session = req.getSession();
                 session.setAttribute("userEmail", email);
-                res.sendRedirect("index");
+                res.sendRedirect("events");
             }else {
                 req.getRequestDispatcher("WEB-INF/login.jsp").forward(req, res);
             }

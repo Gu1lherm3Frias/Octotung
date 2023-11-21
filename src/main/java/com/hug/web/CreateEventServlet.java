@@ -44,7 +44,7 @@ public class CreateEventServlet extends HttpServlet{
 
         HttpSession session = req.getSession(); 
         String organizerEmail = (String) session.getAttribute("userEmail");
-        Integer organizerId = UserDAO.getUserId(organizerEmail);
+        Integer organizerId = UserDAO.getUserIdByEmail(organizerEmail);
 
         try {
             LocalDate formattedDate = LocalDate.parse(eventDate);

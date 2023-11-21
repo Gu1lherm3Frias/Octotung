@@ -91,4 +91,22 @@ public class EventDAO {
         }
         return null;
     }
+
+    public static Integer getOrganizerId(Integer eventId) {
+        String query = "SELECT OrganizerId FROM Event WHERE Id = ?;";
+        try (
+            Connection connection = Connector.getConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
+        ) {
+            statement.setInt(1, eventId);
+            ResultSet result = statement.executeQuery();
+            
+            if (result.next()) {
+                return result.getInt("OrganizerId");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
