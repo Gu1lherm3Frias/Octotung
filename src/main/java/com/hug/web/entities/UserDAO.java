@@ -51,7 +51,7 @@ public class UserDAO {
     }
 
     public static List<User> showAll() {
-        String query = "SELECT * FROM user;";
+        String query = "SELECT * FROM User;";
         List<User>  users = new ArrayList<>();
 
         try (

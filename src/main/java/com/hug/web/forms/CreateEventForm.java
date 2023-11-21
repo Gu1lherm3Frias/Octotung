@@ -19,7 +19,6 @@ public class CreateEventForm {
     @Future
     private Date date;
     @NotNull
-    @Pattern(regexp = "^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$", message = "Formato de tempo inválido")
     private Time eventTime;
     @NotNull
     @NotBlank
@@ -30,7 +29,7 @@ public class CreateEventForm {
 
     public CreateEventForm(@NotNull @NotBlank String name, @NotNull @NotBlank String description,
             @NotNull @Future Date date,
-            @NotNull @Pattern(regexp = "^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$", message = "Formato de tempo inválido") Time eventTime,
+            @NotNull Time eventTime,
             @NotNull @NotBlank String location, @NotNull @NotBlank String type) {
         this.name = name;
         this.description = description;

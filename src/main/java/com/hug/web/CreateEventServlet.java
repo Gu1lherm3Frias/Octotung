@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Set;
 
+import com.hug.web.entities.EventDAO;
 import com.hug.web.entities.User;
 import com.hug.web.entities.UserDAO;
 import com.hug.web.forms.CreateEventForm;
@@ -46,8 +47,6 @@ public class CreateEventServlet extends HttpServlet{
         String organizerEmail = (String) session.getAttribute("userEmail");
         Integer organizerId = UserDAO.getUserId(organizerEmail);
 
-        Boolean errorCheck = null;
-
         try {
             LocalDate formattedDate = LocalDate.parse(eventDate);
             Date castedDate = Date.valueOf(formattedDate);
@@ -61,31 +60,14 @@ public class CreateEventServlet extends HttpServlet{
                 ConstraintViolation<CreateEventForm> firstViolation = violations.iterator().next();
                 String errorMessage = firstViolation.getMessage();
                 req.setAttribute("create-event-error-violation", errorMessage);
-                errorCheck = true;
-            }else {
-                if (UserDAO.emailAlreadyExists(email)) {
-                    req.setAttribute("register-error", "register.emailAlreadyExist");
-                    errorCheck = true;
-                }else if (UserDAO.CPFAlreadyExists(CPF)) {
-                    req.setAttribute("register-error", "register.CPFAlreadyExist");
-                    errorCheck = true;
-                }else if (!password.equals(confirmPassword)) {
-                    req.setAttribute("register-error", "register.passwordDoesNotMatch");
-                    errorCheck = true;
-                }
-            }    
-
-            if (errorCheck) {
                 req.setAttribute("form", form);
-                req.getRequestDispatcher("WEB-INF/register.jsp").forward(req, res);
+                req.getRequestDispatcher("WEB-INF/create-event.jsp").forward(req, res);
             }else {
-                UserDAO.addNewUser(firstName, lastName, CPF, castDate, phone, email, password, isOrganizer);
-                res.sendRedirect("login");
+                EventDAO.createNewEvent(eventName, eventDescription, castedDate, castedTime, eventlocation, eventType, organizerId);
+                res.sendRedirect("events");
             }
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
-        
     }
-    
 }
