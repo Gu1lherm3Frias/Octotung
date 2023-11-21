@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebFilter(value = {"/createEvent"})
+@WebFilter(value = {"/createEvent", "/profile"})
 public class AuthFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
@@ -20,7 +20,7 @@ public class AuthFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
 
         HttpSession session = req.getSession();
-        String userEmail = (String) session.getAttribute("user-mail");
+        String userEmail = (String) session.getAttribute("userEmail");
 
         if (userEmail == null) {
             res.sendRedirect("login");

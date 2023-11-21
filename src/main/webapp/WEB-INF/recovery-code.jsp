@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/public/assets/images/favico.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/public/images/favico.svg" type="image/svg+xml">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/global.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/recover-code.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
