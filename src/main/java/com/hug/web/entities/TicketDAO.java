@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Time;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import com.hug.web.database.Connector;
@@ -28,6 +30,7 @@ public class TicketDAO {
             statement.setInt(7, userId);
             statement.setInt(8, eventId);
             statement.setInt(9, organizerId);
+            statement.executeUpdate();
 
             ResultSet result = statement.getGeneratedKeys();
 
@@ -44,7 +47,9 @@ public class TicketDAO {
         }
     }
 
-    public static List<Ticket> getTicketsById(Integer id) {
+    public static List<Ticket> getTicketsByUserId(Integer id) {
+        List<Ticket> tickets = new ArrayList<>();
+        
         String query = "SELECT * FROM Ticket WHERE UserId = ?;";
         try (
             Connection connection = Connector.getConnection();
@@ -53,15 +58,23 @@ public class TicketDAO {
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
             
-            String userName = "";
-
-            if (result.next()) {
-                userName = result.getString("FirstName") + " " + result.getString("LastName");
-                return userName;
+            while (result.next()) {
+                tickets.add(
+                    new Ticket(
+                        result.getString("Id"),
+                        result.getString("TicketName"), 
+                        result.getDate("TicketDate"), 
+                        result.getTime("TicketTime"), 
+                        result.getString("Location"), 
+                        result.getString("TicketType")
+                    )
+                );
             }
+            result.close();
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
-        return null;
+        return tickets;
     }
 }

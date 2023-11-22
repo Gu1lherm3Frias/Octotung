@@ -92,13 +92,13 @@ public class EventDAO {
         return null;
     }
 
-    public static Integer getOrganizerId(Integer eventId) {
-        String query = "SELECT OrganizerId FROM Event WHERE Id = ?;";
+    public static Integer getOrganizerId(String eventName) {
+        String query = "SELECT OrganizerId FROM Event WHERE EventName = ?;";
         try (
             Connection connection = Connector.getConnection();
             PreparedStatement statement = connection.prepareStatement(query);
         ) {
-            statement.setInt(1, eventId);
+            statement.setString(1, eventName);
             ResultSet result = statement.executeQuery();
             
             if (result.next()) {
