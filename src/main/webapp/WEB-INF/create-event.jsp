@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/public/images/favico.svg" type="image/svg+xml">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/global.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/make-event.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/create-event.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Modak&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>Octotung - Criar Evento</title>
+    <title>Octotung - <fmt:message key="create-event.title"/></title>
 </head>
 <body>
     <%@ include file="header.jsp" %>
@@ -30,13 +30,15 @@
                     <label for="description"><fmt:message key="create-event.form.description"/></label>
                     <textarea id="description" name="description"></textarea>
                 </div>
-                <div class="input-box">
-                    <label for="event-date"><fmt:message key="create-event.form.event-date"/></label>
-                    <input type="date" id="event-date" name="event-date">
-                </div>
-                <div class="input-box">
-                    <label for="event-time"><fmt:message key="create-event.form.event-time"/></label>
-                    <input type="time" id="event-time" name="event-time">
+                <div class="column">
+                    <div class="input-box">
+                        <label for="event-date"><fmt:message key="create-event.form.event-date"/></label>
+                        <input type="date" id="event-date" name="event-date">
+                    </div>
+                    <div class="input-box">
+                        <label for="event-time"><fmt:message key="create-event.form.event-time"/></label>
+                        <input type="time" id="event-time" name="event-time">
+                    </div>
                 </div>
                 <div class="input-box">
                     <label for="event-location"><fmt:message key="create-event.form.event-location"/></label>
