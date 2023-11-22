@@ -4,6 +4,7 @@ body {
 }
 
 main {
+    margin: 5rem;
     flex: 1;
 
     display: flex;
@@ -25,32 +26,61 @@ main {
     padding: 3.75rem 3.125rem 5rem;
     
     width: 64rem;
-    height: 32rem;
+    height: 24rem;
     
     background-color: var(--white-default);
     
     border-radius: 0.625rem;
-    box-shadow: 0px 7px 7px 4px rgba(0, 0, 0, 0.37);    
+    box-shadow: 0px 7px 7px 4px rgba(0, 0, 0, 0.37); 
+    
+    display: flex;
+    flex-direction: column;
 }
 
 .container-header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+}
+
+.event-container p {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.event-name {
+    font-family: Lalezar, cursive;
+    font-size: 2.5rem;
 }
 
 .container-main {
     display: flex;
     justify-content: space-between;
-
+    flex: 1;
 }
 
+.content-side {
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-description {
+    width: 30rem;
+}
+.date-side {
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+}
 .container-footer {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
-.organizer-content {
-
+.organizer-p {
+    font-weight: bold;
 }
 
 .buy-ticket-button {
@@ -77,11 +107,12 @@ main {
     background-color: var(--hover-purple);
 }
 
-.alt-links {
-    margin-left: 0.5rem;
+.buy-ticket-button > a {
+    color: #fff;
 
-    color: var(--white-default);
+    font-family: 'Lalezar', cursive;
+    font-size: 2rem;
+
     text-decoration: none;
-
-    transition: color 1s ease;
+    line-height: 1rem;
 }

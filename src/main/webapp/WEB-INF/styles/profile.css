@@ -1,0 +1,192 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    margin: 5rem;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-title {
+    width: 64rem; 
+}
+
+.profile-title h1{
+    font-family: Lalezar, cursive;
+    font-size: 3rem;
+}
+
+.profile-container {
+    margin: 2.5rem 0;
+    padding: 3.75rem 3.125rem 5rem;
+    
+    width: 64rem;
+    height: 22rem;
+    
+    background-color: var(--white-default);
+    
+    border-radius: 0.625rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.37);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.content-main {
+    padding-right: 9rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.content-main-header, .content-main-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-header h3 {
+    font-family: Lalezar, cursive;
+    font-size: 2.5rem;
+}
+
+.content-main  p {
+    font-family: Noto Sans;
+    font-size: 1.5rem;
+}
+
+.user-age {
+    padding-right: 2.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.label-custom, .content-main .label-custom {
+    font-family: Noto Sans;
+    font-size: 1rem;
+    font-weight: 400; 
+}
+
+.account-type-info {
+    color: var(--beautiful-purple);
+    font-family: lalezar, cursive;
+    font-size: 2rem;
+}
+
+.tickets-owned-content {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.tickets-owned-content h2 {
+    font-family: Lalezar, cursive;
+    font-size: 2.5rem;
+}
+
+.ticket-container {
+    margin: 2.5rem 0;
+    padding: 1.875rem 2.5rem;
+    
+    width: 64rem;
+    height: 12.5rem;
+    
+    background-color: var(--white-default);
+    
+    border-radius: 0.625rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.37);
+
+    transition: box-shadow 0.8s ease-in;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ticket-name {
+    font-family: lalezar, cursive !important;
+    font-size: 2rem;
+}
+
+.ticket-id {
+    color: var(--beautiful-purple);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.ticket-container p {
+    font-family: Noto Sans, sans-serif;
+}
+
+.ticket-container:hover {
+    box-shadow: 0px 0px 6px 3px rgba(64, 78, 237, 0.60);
+}
+
+.ticket-container-header, .ticket-container-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-side {
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+}
+    
+.date-side {
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+}
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.buy-tickets-button {
+    margin-bottom: 6.25rem;
+    padding: 1.5rem 1rem;
+
+    width: 25rem;
+
+    align-self: flex-end;
+    
+    background-color: var(--beautiful-purple);
+
+    text-align: center;
+
+    border-radius: 0.625rem;
+
+    transition: background-color 1s ease;
+
+    cursor: pointer;
+}
+
+.buy-tickets-button:hover {
+    background-color: var(--hover-purple);
+}
+
+.buy-tickets-button > a {
+    color: #fff;
+
+    font-family: 'Lalezar', cursive;
+    font-size: 2rem;
+
+    text-decoration: none;
+    line-height: 1rem;
+}

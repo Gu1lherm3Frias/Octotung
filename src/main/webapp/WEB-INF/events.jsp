@@ -40,11 +40,11 @@
                 </div>
                 <div class="container-footer">
                     <div class="organizer-content">    
-                        <p><fmt:message key="event.organizer"/></p>
+                        <p class="organizer-p"><fmt:message key="event.organizer"/></p>
                         <p>${UserDAO.getNameById(EventDAO.getOrganizerId(currentEvent.name))}</p>
                     </div>
                     <div class="buy-ticket-button">
-                        <a class="alt-links" href="buyTicket?id=${currentEvent.id}&name=${currentEvent.name}&type=${currentEvent.type}&location=${currentEvent.location}&eventDate=${currentEvent.eventDate}&eventTime=${currentEvent.eventTime}"><fmt:message key="event.buy-ticket.button"/></a>
+                        <a href="buyTicket?id=${currentEvent.id}&name=${currentEvent.name}&type=${currentEvent.type}&location=${currentEvent.location}&eventDate=${currentEvent.eventDate}&eventTime=${currentEvent.eventTime}"><fmt:message key="event.buy-ticket.button"/></a>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,53 +12,75 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Modak&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>Octotung - Seu Perfil</title>
+    <title>Octotung - <fmt:message key="profile.title"/></title>
 </head>
 <body>
     <%@ include file="header.jsp" %>
     <%@ page import="com.hug.web.entities.*" %>
     <main>
-        <h1>My Profile</h1>
-        <div class="profile-content">
-            <div class="left-content">
+        <div class="profile-title">
+            <h1><fmt:message key="profile.title"/></h1>
+        </div>
+        <div class="profile-container">
+            <div class="content-header">
                 <h3>${user.firstName} ${user.lastName}</h3>
-                <p>Email: ${user.email}</p>
-                <p>CPF: ${user.cpf}</p>
-            </div>
-            <div class="right-content">
                 <c:if test="${user.isOrganizer}">
-                    <p>Account Type:</p>
-                    <p>You are a organizer</p>
+                    <div class="account-info">
+                        <p class="label-custom"><fmt:message key="profile.user.acc-type"/></p>
+                        <p class="account-type-info"><fmt:message key="profile.user.acc.organizer-type"/></p>
+                    </div>
                 </c:if>
                 <c:if test="${user.isOrganizer == false}">
-                    <p>Account Type:</p>
-                    <p>You are not a organizer</p>
+                    <p class="label-custom"><fmt:message key="profile.user.acc-type"/></p>
+                    <p class="account-type-info"><fmt:message key="profile.user.acc.user-type"/></p>
                 </c:if>
-                <p>Phone: ${user.phone}</p>
-                <p>Age: ${UserDAO.calculateAgeByEmail(user.email)}</p>
+            </div>
+            <div class="content-main">
+                <div class="content-main-header">
+                    <div>
+                        <p class="label-custom"><fmt:message key="profile.user.email"/></p>
+                        <p>${user.email}</p>
+                    </div>
+                    <div>
+                        <p class="label-custom"><fmt:message key="profile.user.phone"/></p>
+                        <p>${user.phone}</p>
+                    </div>
+                </div>
+                <div class="content-main-footer">
+                    <div>
+                        <p class="label-custom"><fmt:message key="profile.user.CPF"/></p>
+                        <p>${user.cpf}</p>
+                    </div>
+                    <div class="user-age">
+                        <p class="label-custom"><fmt:message key="profile.user.age"/></p>
+                        <p>${UserDAO.calculateAgeByEmail(user.email)}</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="tickets-owned-content">
-            <h2>My Tickets</h2>
+            <h2><fmt:message key="profile.ticket.title"/></h2>
             <c:forEach var="currentTicket" items="${ticketsList}">
                 <div class="ticket-container">
-                    <div class="container-header">
-                        <p>${currentTicket.ticketName}</p>
-                        <p>Evento ${currentTicket.type}</p>
-                    </div>
-                    <div class="container-main">
+                    <div class="ticket-container-header">
                         <div class="content-side">
-                            <p>${currentTicket.id}</p>
-                            <p>${currentTicket.location}</p>
+                            <p class="ticket-name">${currentTicket.ticketName}</p>
+                            <p class="ticket-id">${currentTicket.id}</p>
                         </div>
                         <div class="date-side">
                             <p>${currentTicket.ticketDate}</p>
-                            <p>${currentTicket.ticketTime}</p>
+                            <p><fmt:message key="profile.ticket.event-time.p"/> ${currentTicket.ticketTime}</p>
                         </div>
                     </div>
-                    <p>Organizador: ${UserDAO.getNameById(EventDAO.getOrganizerId(currentTicket.ticketName))}</p>
+                    <div class="ticket-container-footer">
+                        <p>${currentTicket.location}</p>
+                        <p><fmt:message key="profile.ticket.event-type.p"/> ${currentTicket.type}</p>
+                    </div>
                 </div>
             </c:forEach>
+            <div class="buy-tickets-button">
+                <a href="events"><fmt:message key="profile.ticket.button"/></a>
+            </div>
         </div>
     </main>
     <%@ include file="footer.jsp" %>
