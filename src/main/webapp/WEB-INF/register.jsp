@@ -24,13 +24,6 @@
                     <h2><fmt:message key="register.title"/></h2>
                     <p><fmt:message key="register.subtitle"/></p>
                 </div>
-                <c:if test="${erros != null}">
-                    <c:forEach var="violation" items="${violations}">
-                        <div class="error-box">
-                            <span class="erros">${erro.message}</span>
-                        </div>
-                    </c:forEach>
-                </c:if>
                 <form class="register-form" action="register" method="POST">
                     <div class="column">
                         <div class="input-box">

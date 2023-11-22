@@ -5,6 +5,8 @@ body {
 
 main {
     margin: 7rem;
+    margin-bottom: 50vh;
+
     flex: 1;
 
     display: flex;

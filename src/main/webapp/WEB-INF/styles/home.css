@@ -5,6 +5,10 @@
     overflow-y: scroll;
 }
 
+main {
+    margin-bottom: 20vh;
+}
+
 .main {
     height: 38.75rem;
     background-color: var(--beautiful-purple);

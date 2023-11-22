@@ -16,34 +16,36 @@
 <body>
     <div class="app-container">
         <%@ include file="header.jsp" %>
-        <div class="main">
-            <div class="hero">
-                <h1><fmt:message key="home.hero.title"/></h1>
-                <p><fmt:message key="home.hero.subtitle.message"/></p>
-                <div class="event-hero-button">
-                    <a href="events"><fmt:message key="home.hero.button"/></a>
+        <main>
+            <div class="main">
+                <div class="hero">
+                    <h1><fmt:message key="home.hero.title"/></h1>
+                    <p><fmt:message key="home.hero.subtitle.message"/></p>
+                    <div class="event-hero-button">
+                        <a href="events"><fmt:message key="home.hero.button"/></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="section-ticket">
-            <div class="section-text-content">    
-                <h2><fmt:message key="ticket.session.title"/></h2>
-                <p><fmt:message key="ticket.session.message"/></p>
-                <p><fmt:message key="ticket.session.submessage"/></p>
-                <div class="buy-tickets-button">
-                    <a href="events"><fmt:message key="ticket.session.button"/></a>
+            <div class="section-ticket">
+                <div class="section-text-content">    
+                    <h2><fmt:message key="ticket.session.title"/></h2>
+                    <p><fmt:message key="ticket.session.message"/></p>
+                    <p><fmt:message key="ticket.session.submessage"/></p>
+                    <div class="buy-tickets-button">
+                        <a href="events"><fmt:message key="ticket.session.button"/></a>
+                    </div>
                 </div>
+                <img src="${pageContext.request.contextPath}/resources/public/images/tickets.svg" alt="">
             </div>
-            <img src="${pageContext.request.contextPath}/resources/public/images/tickets.svg" alt="">
-        </div>
-        <div class="section-search">
-            <div class="section-text-content">
-                <h2><fmt:message key="subsection.session.title"/></h2>
-                <p><fmt:message key="subsection.session.message"/></p>
-                <p><fmt:message key="subsection.session.submessage"/></p>
+            <div class="section-search">
+                <div class="section-text-content">
+                    <h2><fmt:message key="subsection.session.title"/></h2>
+                    <p><fmt:message key="subsection.session.message"/></p>
+                    <p><fmt:message key="subsection.session.submessage"/></p>
+                </div>
+                <img src="${pageContext.request.contextPath}/resources/public/images/search-in-notebook.svg" alt="">
             </div>
-            <img src="${pageContext.request.contextPath}/resources/public/images/search-in-notebook.svg" alt="">
-        </div>
+        </main>
         <%@ include file="footer.jsp" %>
     </div>
 </body>

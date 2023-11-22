@@ -24,16 +24,16 @@
         <div class="profile-container">
             <div class="content-header">
                 <h3>${user.firstName} ${user.lastName}</h3>
-                <c:if test="${user.isOrganizer}">
-                    <div class="account-info">
+                <div class="account-info">
+                    <c:if test="${user.isOrganizer}">
                         <p class="label-custom"><fmt:message key="profile.user.acc-type"/></p>
                         <p class="account-type-info"><fmt:message key="profile.user.acc.organizer-type"/></p>
-                    </div>
-                </c:if>
-                <c:if test="${user.isOrganizer == false}">
-                    <p class="label-custom"><fmt:message key="profile.user.acc-type"/></p>
-                    <p class="account-type-info"><fmt:message key="profile.user.acc.user-type"/></p>
-                </c:if>
+                    </c:if>
+                    <c:if test="${user.isOrganizer == false}">
+                        <p class="label-custom"><fmt:message key="profile.user.acc-type"/></p>
+                        <p class="account-type-info"><fmt:message key="profile.user.acc.user-type"/></p>
+                    </c:if>
+                </div>
             </div>
             <div class="content-main">
                 <div class="content-main-header">
@@ -42,14 +42,14 @@
                         <p>${user.email}</p>
                     </div>
                     <div>
-                        <p class="label-custom"><fmt:message key="profile.user.phone"/></p>
-                        <p>${user.phone}</p>
+                        <p class="label-custom"><fmt:message key="profile.user.CPF"/></p>
+                        <p>${user.cpf}</p>
                     </div>
                 </div>
                 <div class="content-main-footer">
                     <div>
-                        <p class="label-custom"><fmt:message key="profile.user.CPF"/></p>
-                        <p>${user.cpf}</p>
+                        <p class="label-custom"><fmt:message key="profile.user.phone"/></p>
+                        <p>${user.phone}</p>
                     </div>
                     <div class="user-age">
                         <p class="label-custom"><fmt:message key="profile.user.age"/></p>

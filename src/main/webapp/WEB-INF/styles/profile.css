@@ -5,6 +5,8 @@ body {
 
 main {
     margin: 7rem;
+    margin-bottom: 20vh;
+
     flex: 1;
 
     display: flex;
@@ -38,16 +40,17 @@ main {
 }
 
 .content-main {
-    padding-right: 9rem;
+    padding-right: 11.5rem;
 
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    justify-content: space-between;
 }
 
 .content-main-header, .content-main-footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
 .content-header {
@@ -78,6 +81,11 @@ main {
     font-family: Noto Sans;
     font-size: 1rem;
     font-weight: 400; 
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
 }
 
 .account-type-info {
