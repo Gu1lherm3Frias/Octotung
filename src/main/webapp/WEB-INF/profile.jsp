@@ -38,24 +38,26 @@
             </div>
         </div>
         <div class="tickets-owned-content">
+            <h2>My Tickets</h2>
             <c:forEach var="currentTicket" items="${ticketsList}">
-            <div class="ticket-container">
-                <div class="container-header">
-                    <p>${currentTicket.name}</p>
-                    <p>Evento ${currentTicket.type}</p>
-                </div>
-                <div class="container-main">
-                    <div class="content-side">
-                        <p>${currentTicket.location}</p>
+                <div class="ticket-container">
+                    <div class="container-header">
+                        <p>${currentTicket.ticketName}</p>
+                        <p>Evento ${currentTicket.type}</p>
                     </div>
-                    <div class="date-side">
-                        <p>${currentTicket.eventDate}</p>
-                        <p>${currentTicket.eventTime}</p>
+                    <div class="container-main">
+                        <div class="content-side">
+                            <p>${currentTicket.id}</p>
+                            <p>${currentTicket.location}</p>
+                        </div>
+                        <div class="date-side">
+                            <p>${currentTicket.ticketDate}</p>
+                            <p>${currentTicket.ticketTime}</p>
+                        </div>
                     </div>
+                    <p>Organizador: ${UserDAO.getNameById(EventDAO.getOrganizerId(currentTicket.ticketName))}</p>
                 </div>
-                <p>Organizador: ${UserDAO.getNameById(EventDAO.getOrganizerId(currentTicket.eventId))}</p>
-            </div>
-        </c:forEach>
+            </c:forEach>
         </div>
     </main>
     <%@ include file="footer.jsp" %>

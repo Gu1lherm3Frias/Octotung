@@ -24,6 +24,13 @@
                     <h2><fmt:message key="register.title"/></h2>
                     <p><fmt:message key="register.subtitle"/></p>
                 </div>
+                <c:if test="${erros != null}">
+                    <c:forEach var="violation" items="${violations}">
+                        <div class="error-box">
+                            <span class="erros">${erro.message}</span>
+                        </div>
+                    </c:forEach>
+                </c:if>
                 <form class="register-form" action="register" method="POST">
                     <div class="column">
                         <div class="input-box">
@@ -46,9 +53,19 @@
                             <input type="date" id="born-date" name="born-date">
                         </div>
                     </div>
-                    <div class="input-box">
-                        <label for="phone"><fmt:message key="register.form.phone"/></label>
-                        <input type="tel" id="phone" name="phone">
+                    <div class="column">
+                        <div class="input-box">
+                            <label for="phone"><fmt:message key="register.form.phone"/></label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="select-box">
+                            <label for="user-type"><fmt:message key="register.form.user-type"/></label>
+                            <select name="user-type" id="user-type">
+                                <option value="" disabled selected></option>
+                                <option value="false"><fmt:message key="register.form.user-type.user"/></option>
+                                <option value="true"><fmt:message key="register.form.user-type.organizer"/></option>
+                            </select>
+                        </div>
                     </div>
                     <div class="input-box">
                         <label for="email"><fmt:message key="register.form.email"/></label>
@@ -61,13 +78,6 @@
                     <div class="input-box">
                         <label for="confirm-password"><fmt:message key="register.form.password-confirm"/></label>
                         <input type="password" id="confirm-password" name="confirm-password">
-                    </div>
-                    <div class="select-box">
-                        <label for="user-type"><fmt:message key="register.form.user-type"/></label>
-                        <select name="user-type" id="user-type">
-                            <option value="false">User</option>
-                            <option value="true">Organizer</option>
-                        </select>
                     </div>
                     <button type="submit"><fmt:message key="register.form.button"/></button>
                 </form>

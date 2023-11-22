@@ -96,20 +96,17 @@
     font-size: 1.5rem;
 }
 
-.section-ticket > .section-text-content > p {
-    margin-bottom: 4.5rem;
-}
-
 .buy-tickets-button {
+    margin-top: 4.5rem;
     padding: 1.5rem 1rem;
 
     width: 25rem;
     
-    background-color: var(--not-a-black);
+    background-color: var(--beautiful-purple);
 
     text-align: center;
 
-    border-radius: 2.5rem;
+    border-radius: 0.625rem;
 
     cursor: pointer;
 }

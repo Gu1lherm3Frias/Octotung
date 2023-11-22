@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,17 +14,17 @@
     <div class="footer">
         <div class="support-social-media">
             <div class="social-media">
-                <p>Nossas redes sociais:</p>
+                <p><fmt:message key="footer.social-networks.p"/></p>
                 <nav>
-                    <a href="https://github.com/gu1lherm3frias/octotung" target="_blank">Github</a>
-                    <a href="" target="_blank">Discord</a>
-                    <a href="" target="_blank">Twitter</a>
-                    <a href="" target="_blank">Instagram</a>
+                    <a href="https://github.com/gu1lherm3frias/octotung" target="_blank"><fmt:message key="footer.social-networks.nav.github"/></a>
+                    <a href="" target="_blank"><fmt:message key="footer.social-networks.nav.discord"/></a>
+                    <a href="" target="_blank"><fmt:message key="footer.social-networks.nav.twitter"/></a>
+                    <a href="" target="_blank"><fmt:message key="footer.social-networks.nav.instagram"/></a>
                 </nav>
             </div>
             <div class="support-content">
-                <p>Suporte e contato</p>
-                <a href=""><p>support.octo@octoorg.com</p></a>
+                <p><fmt:message key="footer.support-contacts.p"/></p>
+                <a href=""><fmt:message key="footer.support-contact.email"/></p></a>
             </div>
         </div>
         <div class="sub-footer">
@@ -30,7 +32,7 @@
                 <img src="${pageContext.request.contextPath}/resources/public/images/logo.svg" alt="logo">
             </a>
             <div class="signup-button">
-                <a href="register">Sign Up</a>
+                <a href="register"><fmt:message key="footer.signup.button"/></a>
             </div>
         </div>
     </div>

@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,26 +20,33 @@
     <%@ page import="com.hug.web.entities.*" %>
     <main>
         <div class="events-title">
-            <h1>Aqui estão os melhores eventos</h1>
+            <h1><fmt:message key="events.title.h1"/></h1>
         </div>
         <c:forEach var="currentEvent" items="${eventsList}">
             <div class="event-container">
                 <div class="container-header">
-                    <p>${currentEvent.name}</p>
-                    <p>Evento ${currentEvent.type}</p>
+                    <h2 class="event-name">${currentEvent.name}</h2>
+                    <p class="event-type"><fmt:message key="event.event-type.p"/> ${currentEvent.type}</p>
                 </div>
                 <div class="container-main">
                     <div class="content-side">
-                        <p>${currentEvent.description}</p>
-                        <p>${currentEvent.location}</p>
+                        <p class="event-description">${currentEvent.description}</p>
+                        <p class="event-location">${currentEvent.location}</p>
                     </div>
                     <div class="date-side">
                         <p>${currentEvent.eventDate}</p>
-                        <p>${currentEvent.eventTime}</p>
+                        <p><fmt:message key="event.event-time.p"/> ${currentEvent.eventTime}</p>
                     </div>
                 </div>
-                <p>Organizador: ${UserDAO.getNameById(EventDAO.getOrganizerId(currentEvent.id))}</p>
-                <button type="submit">Buy Ticket</button>
+                <div class="container-footer">
+                    <div class="organizer-content">    
+                        <p><fmt:message key="event.organizer"/></p>
+                        <p>${UserDAO.getNameById(EventDAO.getOrganizerId(currentEvent.name))}</p>
+                    </div>
+                    <div class="buy-ticket-button">
+                        <a class="alt-links" href="buyTicket?id=${currentEvent.id}&name=${currentEvent.name}&type=${currentEvent.type}&location=${currentEvent.location}&eventDate=${currentEvent.eventDate}&eventTime=${currentEvent.eventTime}"><fmt:message key="event.buy-ticket.button"/></a>
+                    </div>
+                </div>
             </div>
         </c:forEach>
     </main>

@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +17,12 @@
                 <img src="${pageContext.request.contextPath}/resources/public/images/logo.svg" alt="logo">
             </a>
             <nav class="nav-links">
-                <a href="events">Eventos</a>
-                <a href="createEvent">Criar Evento</a>
-                <a href="aboutUs">Sobre nós</a>
+                <a href="events"><fmt:message key="header.nav.event"/></a>
+                <a href="createEvent"><fmt:message key="header.nav.create-event"/></a>
+                <a href="aboutUs"><fmt:message key="header.nav.about-us"/></a>
             </nav>
             <div class="login-button">
-                <a href="login">Login</a>
+                <a href="login"><fmt:message key="header.header.login"/></a>
             </div>
         </header>
     </div>

@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Modak&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <title><fmt:message key="login.title"/></title>
+    <title>Octotung - <fmt:message key="login.title"/></title>
 </head>
 <body>
     <div class="login-container">
